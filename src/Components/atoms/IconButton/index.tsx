@@ -7,7 +7,7 @@ interface props{
   children: ReactNode;
   disabled:boolean,
   onClick: ()=>void,
-  icon: any,
+  icon?: any,
 }
 
 function IconButtons(props:props) {

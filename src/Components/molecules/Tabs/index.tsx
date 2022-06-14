@@ -20,9 +20,6 @@ const useStyles = makeStyles({
     "&:focus": {
       color: "#22C870",
     },
-
-    // "&.css-1aquho2-MuiTabs-indicator" for tabs not
-    // .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected for tabs
   },
 });
 
@@ -34,7 +31,7 @@ function TabsComponent() {
   };
   return (
     <StyledEngineProvider injectFirst>
-      <TabContext value={value}>
+      <TabContext value={value} data-testid={"tab-context"}>
         <Box width="91%" position={"relative"} left="7%">
           <TabList
             onChange={handleChange}
@@ -49,14 +46,15 @@ function TabsComponent() {
               label="Currently Reading"
               value="1"
               className={classes.tabsclass}
+              data-testid={"reading-tab"}
             />
-            <Tab label="Finished" value="2" className={classes.tabsclass} />
+            <Tab label="Finished" value="2" className={classes.tabsclass} data-testid={"finished-tab"}/>
           </TabList>
         </Box>
-        <TabPanel value="1">
+        <TabPanel value="1" data-testid={"tab-panel1"}>
           <CardsList finished={true} checkComplete={31}></CardsList>
         </TabPanel>
-        <TabPanel value="2">
+        <TabPanel value="2" data-testid={"tab-panel2"}>
         <CardsList readAgain={true} checkComplete={100}></CardsList>
         </TabPanel>
       </TabContext>
