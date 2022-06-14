@@ -7,9 +7,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Search from "../../../images/search.svg";
 import Avatars from "../../atoms/Avatar";
 import ExtendedNav from "../ExtendedNav";
-import zIndex from "@mui/material/styles/zIndex";
+// import zIndex from "@mui/material/styles/zIndex";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import zIndex from "@material-ui/core/styles/zIndex";
 
 interface props {
   avatarIcon: boolean;
@@ -29,7 +30,6 @@ function Header(props: props) {
   const [open, setOpen] = useState(false);
 
   const backdroptry = () => {
-    console.log(tryingback);
     settryingback(!tryingback);
     setOpen(!open);
   };
@@ -143,22 +143,7 @@ function Header(props: props) {
   </Box>
       ) : null}
     </Box>
-
-    // top={'50px'} left={'-650px'}
   );
 }
 
 export default Header;
-
-// {/* <Backdrop
-//           open={logouttry}
-//           sx={{
-//             position: "absolute",
-//             top: "80px",
-//             backgroundColor: "rgba(157, 163, 166, 0.45)",
-//             zIndex: zIndex.drawer + 1,
-//           }}
-//           onClick={logoutbackdrop}
-//         >
-          
-//         </Backdrop> */}

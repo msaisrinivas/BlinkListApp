@@ -102,7 +102,6 @@ function MediaCards(props: props) {
 
   useEffect(() => {
     if (load) {
-      console.log(books);
       changeBookById();
     }
     setLoad(false);
@@ -133,7 +132,7 @@ function MediaCards(props: props) {
       />
         );
     }
-    else if(props.progressValues)
+    else if(props.progressValues === 0)
     {
       libraryAction = (
       <Button

@@ -27,8 +27,8 @@ function Editorial(props:props) {
   const classes = useStyle();
 
   const trying = props.listingItems;
-  const listing = trying.map((item) =>
-  <ListItem style={{ padding: "0px" }}>
+  const listing = trying.map((item, key) =>
+  <ListItem style={{ padding: "0px" }} key={key} >
   <ListItemText secondary={item} classes={{secondary:classes.iteming}}/>
 </ListItem>
   );
@@ -46,6 +46,7 @@ function Editorial(props:props) {
         flexDirection: "column",
         alignItems: "flex-start",
       }}
+
     >
       <ListItem style={{ padding: "0px" }}>
         <ListItemText classes={{primary:classes.heading}} primary={props.listHead}/>

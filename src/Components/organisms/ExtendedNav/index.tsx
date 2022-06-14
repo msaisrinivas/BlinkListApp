@@ -12,12 +12,12 @@ const useStyles = makeStyles({
     color: "#6D787E",
     minWidth: "188px",
     width: "auto",
-    paddingBottom: '24px',
-    paddingRight:'120px',
+    paddingBottom: "24px",
+    paddingRight: "120px",
 
-    '&:hover':{
-      color:'#116BE9',
-      fontWeight:'700',
+    "&:hover": {
+      color: "#116BE9",
+      fontWeight: "700",
     },
   },
 
@@ -34,13 +34,16 @@ function ExtendedNav() {
 
   let navigate = useNavigate();
 
-  let allBooksPage = () =>{
+  let allBooksPage = () => {
     navigate("/allbooks");
-  }
+  };
 
   return (
-    
-    <Box height={"auto"} width={"100%"} sx={{ backgroundColor: "#F1F6F4", position: "relative", top:'-85px' }}>
+    <Box
+      height={"auto"}
+      width={"100%"}
+      sx={{ backgroundColor: "#F1F6F4", position: "relative", top: "-85px" }}
+    >
       <Box className={classes.fisrtContain}>
         <Box display={"flex"} borderBottom="solid 1px black" width="940px">
           <Typography className={classes.forTypo}>
@@ -55,18 +58,26 @@ function ExtendedNav() {
         </Box>
       </Box>
       <Box className={classes.fisrtContain}>
-        <Box width="940px" display={'flex'} flexWrap={'wrap'}>
+        <Box width="940px" display={"flex"} flexWrap={"wrap"}>
           {Navigation.map((data, key) => {
             return (
-              <Box flexBasis={'33.3333333333%'} paddingBottom={'28px'} >
-                <Link sx={{textDecoration:'None'}} onClick={allBooksPage}>
-              <IconText
-                name={data.title}
+              <Box
+                flexBasis={"33.3333333333%"}
+                paddingBottom={"28px"}
                 key={key}
-                icon={data.icon}
-                styling={"extended"}
-              />
-              </Link>
+              >
+                <Link
+                  sx={{ textDecoration: "None" }}
+                  onClick={allBooksPage}
+                  data-testid={"link-a"}
+                >
+                  <IconText
+                    name={data.title}
+                    key={key}
+                    icon={data.icon}
+                    styling={"extended"}
+                  />
+                </Link>
               </Box>
             );
           })}
