@@ -1,5 +1,7 @@
 version = 1
 
+test_patterns = ["src/components/*/*/*.test.tsx"]
+
 [[analyzers]]
 name = "test-coverage"
 enabled = true
